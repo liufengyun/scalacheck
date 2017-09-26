@@ -309,7 +309,7 @@ object GenSpecification extends Properties("Gen") {
 
   property("resultOf3") = {
     case class B(n: Int, s: String, b: Boolean)
-    implicit val arbB = Arbitrary(resultOf(B))
+    implicit val arbB: Arbitrary[B] = Arbitrary(resultOf(B))
     forAll { b:B => true }
   }
 
