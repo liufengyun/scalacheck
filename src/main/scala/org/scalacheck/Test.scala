@@ -225,7 +225,7 @@ object Test {
     ) throw new IllegalArgumentException("Invalid test parameters")
   }
 
-  private[scalacheck] lazy val cmdLineParser = new CmdLineParser {
+  private[scalacheck] object cmdLineParser extends CmdLineParser {
     object OptMinSuccess extends IntOpt {
       val default = Parameters.default.minSuccessfulTests
       val names = Set("minSuccessfulTests", "s")
