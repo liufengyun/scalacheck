@@ -19,10 +19,16 @@ object MimaSettings {
   )
 
   private def removedPrivateMethods = Seq(
+    // lazy val cmdLineParser is now an object
+    "org.scalacheck.Test.cmdLineParser"
   )
 
   private def removedPrivateClasses = Seq(
-    "org.scalacheck.Platform$EnableReflectiveInstantiation"
+    "org.scalacheck.Platform$EnableReflectiveInstantiation",
+
+    // private case class Seed.apply
+    "org.scalacheck.rng.Seed$apply",
+    "org.scalacheck.rng.Seed$apply$"
   )
 
   private def otherProblems = Seq(
