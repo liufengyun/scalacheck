@@ -102,7 +102,7 @@ object Seed {
     override def toString: String = s"""Seed.fromBase64("$toBase64")"""
   }
 
-  def apply(a: Long, b: Long, c: Long, d: Long): Seed = SeedImpl(a, b, c, d)
+  private def apply(a: Long, b: Long, c: Long, d: Long): Seed = SeedImpl(a, b, c, d)
 
   /** Generate a deterministic seed. */
   def apply(s: Long): Seed = {
